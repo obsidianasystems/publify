@@ -57,6 +57,10 @@ module ApplicationHelper
     controller.send(:render_to_string, *args, &block)
   end
 
+  def link_to_locallink(item, title, anchor = nil, style = nil, nofollow = nil)
+    link_to_permalink(item, title, anchor , style , nofollow , true)
+  end
+  
   def link_to_permalink(item, title, anchor = nil, style = nil, nofollow = nil, only_path = false)
     options = {}
     options[:class] = style if style
